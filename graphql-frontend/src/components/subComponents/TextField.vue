@@ -22,5 +22,10 @@ export default {
 .borderCode {
   padding: 2px;
   border: 1px solid #888;
+  overflow-x: auto;
+  white-space: pre;
+  padding: 1.2em 1.4em;
+  line-height: 1.6rem;
+  display: block;
 }
 </style>

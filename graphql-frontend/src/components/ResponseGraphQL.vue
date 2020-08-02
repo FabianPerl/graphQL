@@ -1,13 +1,14 @@
 <template>
   <div>
     <h1>JSON-Response</h1>
-    <TextField label="Response" content="Comming Soon" />
+    <TextField v-if="!response" label="Response" content="No Content" />
+    <TextField v-else label="Response" :content="response" />
   </div>
 </template>
 
 <script>
 import TextField from "./subComponents/TextField";
-// import gql from "graphql-tag";
+import axios from "axios";
 
 export default {
   components: { TextField },
@@ -16,19 +17,16 @@ export default {
     response: null,
   }),
   watch: {
-    request: function (newVal) {
-      // eslint-disable-next-line no-console
-      console.log(`${newVal}`);
-      // this.$apollo
-      //   .query(
-      //     gql`
-      //       ${newVal}
-      //     `
-      //   )
-      //   // eslint-disable-next-line no-console
-      //   .then((succ) => console.log(succ))
-      //   // eslint-disable-next-line no-console
-      //   .catch((err) => console.log(err.mesage));
+    request: function(query) {
+      let body = {
+        query: query,
+        variables: {},
+      };
+
+      axios
+        .post("http://localhost:8080/graphql", body)
+        .then((succ) => (this.response = JSON.stringify(succ.data, null, "\t")))
+        .catch((err) => (this.response = err.message));
     },
   },
 };

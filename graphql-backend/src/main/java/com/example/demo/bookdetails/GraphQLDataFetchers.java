@@ -29,13 +29,16 @@ public class GraphQLDataFetchers
     private static List<Map<String, String>> authors = Arrays.asList(
             ImmutableMap.of("id", "author-1",
                     "firstName", "Joanne",
-                    "lastName", "Rowling"),
+                    "lastName", "Rowling",
+                    "age", "53"),
             ImmutableMap.of("id", "author-2",
                     "firstName", "Herman",
-                    "lastName", "Melville"),
+                    "lastName", "Melville",
+                    "age", "60"),
             ImmutableMap.of("id", "author-3",
                     "firstName", "Anne",
-                    "lastName", "Rice")
+                    "lastName", "Rice",
+                    "age", "73")
     );
 
     public DataFetcher getBookByIdDataFetcher() {

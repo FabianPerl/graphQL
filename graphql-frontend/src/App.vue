@@ -3,15 +3,22 @@
     <v-main>
       <v-row>
         <v-col cols="2">
-          <InputGraphQL @selectedChanged="changeSelected" @bookChanged="bookChanged" />
+          <InputGraphQL
+            @selectedChanged="changeSelected"
+            @bookChanged="bookChanged"
+          />
         </v-col>
-        <v-col cols="1" align-self="center">
+        <v-col cols="1" align-self="center" class="colText">
           <span class="charFont">></span>
         </v-col>
         <v-col cols="4">
-          <RequestGraphQL :selected="selected" :bookId="bookID" @changedSDL="newRequest" />
+          <RequestGraphQL
+            :selected="selected"
+            :bookId="bookID"
+            @changedSDL="newRequest"
+          />
         </v-col>
-        <v-col cols="1" align-self="center">
+        <v-col cols="1" align-self="center" class="colText">
           <span class="charFont">=</span>
         </v-col>
         <v-col cols="4">
@@ -68,5 +75,9 @@ h1 {
 .charFont {
   font-size: 85pt;
   color: lightgray;
+}
+
+.colText {
+  text-align: center;
 }
 </style>

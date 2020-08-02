@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <div>
     <v-row>
       <h1>Input</h1>
     </v-row>
@@ -18,7 +18,7 @@
     <v-row>
       <v-treeview selectable open-all hoverable return-object :items="items" v-model="selected"></v-treeview>
     </v-row>
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -26,7 +26,7 @@ export default {
   data: () => ({
     selected: [],
     checkBoxSelected: 1,
-    checkBox: [1, 2, 3, 4, 5, 6],
+    checkBox: [1, 2, 3],
     items: [
       {
         id: 1,
