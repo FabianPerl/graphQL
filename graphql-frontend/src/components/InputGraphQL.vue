@@ -4,7 +4,7 @@
       <h1>Input</h1>
     </v-row>
     <v-row>
-      <v-col cols="8">
+      <v-col cols="12">
         <v-combobox
           v-model="checkBoxSelected"
           :items="checkBox"
